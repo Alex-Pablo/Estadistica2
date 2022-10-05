@@ -13,3 +13,25 @@ body{
     background-color: var(--color-fondo);
     font-family: 'Poppins';
 }
+
+
+
+
+
+
+.ctnrMainTeoremaFather{
+    display: flex;
+    justify-content: center;
+}
+
+.ctnrMaonTeorema{
+    background-color:  #F4F4F4 ;
+    width: 90%;
+    min-height: 72vh;
+    padding: 20px;
+}
+
+.ctnrTitleTeorema{
+    text-align: center;
+    margin-bottom: 40px;
+}
