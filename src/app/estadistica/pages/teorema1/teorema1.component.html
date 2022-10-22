@@ -4,11 +4,42 @@
             <h3>Teorema 1</h3>
         </div>
 
-        <div>
-            
-            <!-- ingreso de datps -->
+        <div class="cntrTeoremaGrid">
 
+
+            <div class="ctnrIngresoDatosTeoF">
+                <h3>Ingrese el valor</h3>
+                <input type="number" placeholder="n" [(ngModel)]="dato">
+                <button  (click)="resolver()">Resolver</button>
+                <p class="txtTituloFormula">Formula del teorema 1</p>
+                <p class="txtFormula">n!</p>
+            </div>
+            <div class="verticalLine"></div>
+            <div class="ctnrResultadoTeoF">
+
+
+                <div class="ctnrTitulosReDefi">
+                    <h3  (click)="meCambiarTemas()"   [ngClass]="CambiarTemas==true ? 'txt-tiResult' : 'txt-tiResultOf'" >Resultado</h3>
+                    <h3  (click)="meCambiarTemas()"   [ngClass]="CambiarTemas ==false ? 'txt-tiResult' : 'txt-tiResultOf'" >Definicion</h3>
+                </div>
+                
+
+                <ng-template [ngIf]="CambiarTemas">
+                    <div>
+                        <p class="resultadoOperacion">{{resultado}}</p>
+                    </div>
+                </ng-template>
+
+                <ng-template [ngIf]="!CambiarTemas">
+                    <div>
+                        <p class="txtDefinicionTeorema">  Teorema 1 <br> El numero de permutaciones de n objetos es n! </p>
+                    </div>
+                </ng-template>
+
+
+            </div>
 
         </div>
+
     </div>
 </div>

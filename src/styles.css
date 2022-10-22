@@ -17,8 +17,6 @@ body{
 
 
 
-
-
 .ctnrMainTeoremaFather{
     display: flex;
     justify-content: center;
@@ -28,10 +26,135 @@ body{
     background-color:  #F4F4F4 ;
     width: 90%;
     min-height: 72vh;
-    padding: 20px;
+    padding: 30px 80px;
 }
 
 .ctnrTitleTeorema{
     text-align: center;
     margin-bottom: 40px;
+}
+
+
+
+
+/* 
+teorema 
+ */
+
+
+.cntrTeoremaGrid{
+    display: grid;
+    grid-template-columns: 1fr 30px 2fr;
+    gap: 10px;
+}
+
+.ctnrIngresoDatosTeoF{
+    display: flex;
+    flex-direction: column;
+}
+
+.ctnrIngresoDatosTeoF h3{
+    font-size: #101010;
+    font-weight: 900;
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.ctnrIngresoDatosTeoF input{
+    padding: 7px 15px;
+    width: 250px;
+    height: auto;
+    outline: none;
+    border: none;
+    background-color: #e4e3e3;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.ctnrIngresoDatosTeoF input::placeholder{
+    font-size: 18px;
+}
+
+
+.ctnrIngresoDatosTeoF button{
+    width: 110px;
+    border: none;
+    background-color: #2C2929;
+    color: #FFFFFF;
+    font-weight: 800;
+    padding: 8px 10px;
+    margin: 15px 0  30px 0;  
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.ctnrIngresoDatosTeoF  button:hover{
+    background-color: #181616;
+}
+
+.txtFormula{
+    margin-top: 5px;
+    color: #2C2929;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+
+.txtTituloFormula{
+    color: #2C2929;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+
+.ctnrResultadoTeoF{
+    background-color: #6D6A97;
+    border-radius: 10px;
+    padding: 5px 15px;
+}
+
+.ctnrTitulosReDefi{
+    display: flex;
+    gap: 30px;
+    align-items: baseline;
+}
+
+.txt-tiResult{
+    color: #101010;
+    font-weight: 900;
+    font-size: 20px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    text-decoration:underline;
+}
+
+.txt-tiResultOf{
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+.txtDefinicionTeorema{
+    font-weight: 400;
+    color: rgb(196, 196, 199);
+}
+
+.resultadoOperacion{
+    color: #e6dada;
+    font-weight: 900;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.verticalLine{
+    border: 5px solid #9BC9A4;
+    background-color: #9BC9A4;
+    border-radius: 5px;
+    height: 200px;
+    align-self: center;
+    justify-self: flex-start;
 }

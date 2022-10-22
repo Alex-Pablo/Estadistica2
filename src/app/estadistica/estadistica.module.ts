@@ -9,6 +9,11 @@ import { Teorema3Component } from './pages/teorema3/teorema3.component';
 import { Teorema4Component } from './pages/teorema4/teorema4.component';
 import { Teorema5Component } from './pages/teorema5/teorema5.component';
 import { Teorema6Component } from './pages/teorema6/teorema6.component';
+import { MathjaxModule } from 'mathjax-angular';
+import { FormsModule } from '@angular/forms';
+import { Teorema7Component } from './pages/teorema7/teorema7.component';
+import { Teorema8Component } from './pages/teorema8/teorema8.component';
+import { Teorema9Component } from './pages/teorema9/teorema9.component';
 
 
 @NgModule({
@@ -19,11 +24,16 @@ import { Teorema6Component } from './pages/teorema6/teorema6.component';
     Teorema3Component,
     Teorema4Component,
     Teorema5Component,
-    Teorema6Component
+    Teorema6Component,
+    Teorema7Component,
+    Teorema8Component,
+    Teorema9Component,
   ],
   imports: [
     CommonModule,
-    EstadisticaRoutingModule
+    EstadisticaRoutingModule,
+    MathjaxModule.forRoot(),
+    FormsModule
   ]
 })
 export class EstadisticaModule { }

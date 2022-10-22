@@ -4,11 +4,56 @@
             <h3>Teorema 3</h3>
         </div>
 
-        <div>
-            
-            <!-- ingreso de datps -->
 
 
+        <div class="cntrTeoremaGrid">
+
+            <div class="ctnrIngresoDatosTeoF">
+                <h3>Ingrese los valores</h3>
+                <input type="number" placeholder="n" [(ngModel)]="n">
+                <button  (click)="Meresultado()">Resolver</button>
+
+                <p class="txtTituloFormula">Formula del teorema 3</p>
+                <div [mathjax]="Formula" class="txtFormula"></div>
+            </div>
+
+            <div class="verticalLine"></div>
+
+            <div class="ctnrResultadoTeoF">
+                <div class="ctnrTitulosReDefi">
+                    <h3  (click)="meCambiarTemas()"   [ngClass]="CambiarTemas==true ? 'txt-tiResult' : 'txt-tiResultOf'" >Resultado</h3>
+                    <h3  (click)="meCambiarTemas()"   [ngClass]="CambiarTemas ==false ? 'txt-tiResult' : 'txt-tiResultOf'" >Definicion</h3>
+                </div>
+
+                <ng-template [ngIf]="CambiarTemas">
+                    <div *ngIf=mostrar>
+                        <p [mathjax]="Formula"></p>
+                        <br>
+                        <p [mathjax]="SustituirTxt"></p>
+                        <br>
+                        <p [mathjax]="RestaNRTxt"></p>
+                        <br>
+                        <p class="resultadoOperacion"> Resultado  = {{resultado}}</p>
+                    </div>
+                </ng-template>
+
+                <ng-template [ngIf]="!CambiarTemas">
+                    <div>
+                        <p class="txtDefinicionTeorema">  Teorema 3 <br> El numero de permutaciones de n objetos ordenados en un circulo es (n-1) </p>
+                        <br>
+                        <p class="txtDefinicionTeorema">  Ejemplo <br> Por ejemplo, si cuatro personas juegan cartas, no tenemos una permutacion nueva si se mueven una posicion  en la direccion de las manecillas del rejol.  Si consideramos a una persona en una posicion fija y arreglamos a las otras tres de 3! formas, encontremos que hay seis arreglos distintos para el juego de bridge</p>
+                        <p class="txtDefinicionTeorema">  n= 4  </p>
+                        <br>
+                        <p [mathjax]="contenEjempl1"></p>
+                        <p [mathjax]="contenEjempl2"></p>
+                    </div>
+                    <br>
+                </ng-template>
+
+            </div>
         </div>
+
+
+
     </div>
-</div>
+</div> 

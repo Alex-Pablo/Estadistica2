@@ -4,11 +4,59 @@
             <h3>Teorema 2</h3>
         </div>
 
-        <div>
-            
-            <!-- ingreso de datps -->
+
+        <div class="cntrTeoremaGrid">
+
+            <div class="ctnrIngresoDatosTeoF">
+                <h3>Ingrese los valores</h3>
+                <input type="number" placeholder="n" [(ngModel)]="n">
+                <input type="number" placeholder="r" [(ngModel)]="r">
+                <button  (click)="Meresultado()">Resolver</button>
+
+                <p class="txtTituloFormula">Formula del teorema 2</p>
+                <div [mathjax]="Formula" class="txtFormula"></div>
+            </div>
+
+            <div class="verticalLine"></div>
+
+            <div class="ctnrResultadoTeoF">
+                <div class="ctnrTitulosReDefi">
+                    <h3  (click)="meCambiarTemas()"   [ngClass]="CambiarTemas==true ? 'txt-tiResult' : 'txt-tiResultOf'" >Resultado</h3>
+                    <h3  (click)="meCambiarTemas()"   [ngClass]="CambiarTemas ==false ? 'txt-tiResult' : 'txt-tiResultOf'" >Definicion</h3>
+                </div>
+
+                <ng-template [ngIf]="CambiarTemas">
+                    <div *ngIf=mostrar>
+                        <p [mathjax]="Formula"></p>
+                        <br>
+                        <p [mathjax]="SustituirTxt"></p>
+                        <br>
+                        <p [mathjax]="RestaNRTxt"></p>
+                        <br>
+                        <p class="resultadoOperacion"> Resultado  = {{resultado}}</p>
+                    </div>
+                </ng-template>
+
+                <ng-template [ngIf]="!CambiarTemas">
+                    <div>
+                        <p class="txtDefinicionTeorema">  Teorema 2 <br> el numero de permutaciones de n objetos distintos tomados de r a la vez es: </p>
+                        <p [mathjax]="Formula"></p>
+                        <br>
+                        <br>
+                        <p class="txtDefinicionTeorema">  Ejemplo <br> En un club estudiantil compuesto por "50" personas se va a elegir a un presidente y a un tesorero. ¿Cuntas opciones diferentes de funcionarios son posibles si  no hay restricciones</p>
+                        <p class="txtDefinicionTeorema"> n= 50 <br> r= 2 (presidente y tesorero) </p>
+                        <br>
+                        <p [mathjax]="contenEjempl1"></p>
+                        <br>
+                        <p [mathjax]="contenEjempl2"></p>
+                        <br>
+                    </div>
+                </ng-template>
 
 
+            </div>
         </div>
+
+
     </div>
 </div>

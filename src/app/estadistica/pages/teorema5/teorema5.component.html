@@ -4,11 +4,61 @@
             <h3>Teorema 5</h3>
         </div>
 
-        <div>
-            
-            <!-- ingreso de datps -->
+        <div class="cntrTeoremaGrid">
+
+            <div class="ctnrIngresoDatosTeoF">
+                <h3>Ingrese los valores</h3>
+                <input type="number" placeholder="n" [(ngModel)]="n">
+                <input type="text" placeholder="Ejem n1,n2,..nk" [(ngModel)]="n1">
+                <button  (click)="Meresultado()">Resolver</button>
+
+                <p class="txtTituloFormula">Formula del teorema 5</p>
+                <div [mathjax]="Formula" class="txtFormula"></div>
+            </div>
+
+            <div class="verticalLine"></div>
+
+            <div class="ctnrResultadoTeoF">
+                <div class="ctnrTitulosReDefi">
+                    <h3  (click)="meCambiarTemas()"   [ngClass]="CambiarTemas==true ? 'txt-tiResult' : 'txt-tiResultOf'" >Resultado</h3>
+                    <h3  (click)="meCambiarTemas()"   [ngClass]="CambiarTemas ==false ? 'txt-tiResult' : 'txt-tiResultOf'" >Definicion</h3>
+                </div>
+
+                <ng-template [ngIf]="CambiarTemas">
+                    <div *ngIf=mostrar>
+                        <p [mathjax]="Formula"></p>
+                        <br>
+                        <p [mathjax]="SustituirTxt"></p>
+                        <br>
+                        <p [mathjax]="SustituirTxt1"></p>
+                        <br>
+                        <p class="resultadoOperacion"> Resultado  = {{resultado}}</p>
+                    </div>
+                </ng-template>
 
 
+                <ng-template [ngIf]="!CambiarTemas">
+                    <div>
+                        <p class="txtDefinicionTeorema">  Teorema 5 <br> El numero de formas de partir un conjunto de n objetos en r celdas con n1 elementos en la primera celda, n2 elementos en la segunda, y asi sucesivamente </p>
+                        <br>
+                        <p class="txtDefinicionTeorema">  Ejemplo <br> Un hotel va a hospedar a siete estudiantes de posgrado que asisten a
+                            una conferencia, ¿en cuántas formas los puede asignar a una
+                            habitación triple y a dos dobles? </p>
+                        <br>
+                        <p class="txtDefinicionTeorema">  n= 7! (siete estudiantes) </p>
+                        <p class="txtDefinicionTeorema">  n1= 3! </p>
+                        <p class="txtDefinicionTeorema">  n2= 2! </p>
+                        <p class="txtDefinicionTeorema">  n3= 2! </p>
+                        <br>
+                        <p [mathjax]="contenEjempl1"></p>
+                        <br>
+                    </div>
+                </ng-template>
+
+
+            </div>
         </div>
+
+        
     </div>
 </div>

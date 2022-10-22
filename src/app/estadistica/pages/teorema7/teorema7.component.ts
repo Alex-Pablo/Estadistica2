@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-teorema4',
-  templateUrl: './teorema4.component.html',
-  styleUrls: ['./teorema4.component.css']
+  selector: 'app-teorema7',
+  templateUrl: './teorema7.component.html',
+  styleUrls: ['./teorema7.component.css']
 })
-export class Teorema4Component implements OnInit {
+export class Teorema7Component implements OnInit {
+  
   n:any;
   n1:any;
   mostrar: boolean = false;
-  Formula = ` = $n! \\over n1! n2! ... nk! $`;
+  Formula = ` = $  P(A U B)= P(A)+ P(B)-P(A ∩ B) $`;
 
   SustituirTxt: any;
   SustituirTxt1: any;
@@ -67,6 +68,7 @@ export class Teorema4Component implements OnInit {
     }
     this.SustituirTxt = `= $${this.n}! \\over ${nuMPer} $`;
   }
+
 
 
 

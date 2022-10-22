@@ -7,6 +7,9 @@ import { Teorema3Component } from './pages/teorema3/teorema3.component';
 import { Teorema4Component } from './pages/teorema4/teorema4.component';
 import { Teorema5Component } from './pages/teorema5/teorema5.component';
 import { Teorema6Component } from './pages/teorema6/teorema6.component';
+import { Teorema7Component } from './pages/teorema7/teorema7.component';
+import { Teorema8Component } from './pages/teorema8/teorema8.component';
+import { Teorema9Component } from './pages/teorema9/teorema9.component';
 
 const routes: Routes = [
   { path:"menu", component: MenuPageComponent },
@@ -16,6 +19,9 @@ const routes: Routes = [
   { path:"teorema4" , component: Teorema4Component },
   { path:"teorema5" , component: Teorema5Component },
   { path:"teorema6", component:  Teorema6Component },
+  { path:"teorema7",  component: Teorema7Component },
+  { path: "teorema8", component: Teorema8Component },
+  { path: "teorema9", component: Teorema9Component },
   { path:"**", redirectTo:"menu" }
 ];
 

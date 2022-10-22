@@ -4,11 +4,58 @@
             <h3>Teorema 4</h3>
         </div>
 
-        <div>
-            
-            <!-- ingreso de datps -->
+        <div class="cntrTeoremaGrid">
+
+            <div class="ctnrIngresoDatosTeoF">
+                <h3>Ingrese los valores</h3>
+                <input type="number" placeholder="n" [(ngModel)]="n">
+                <input type="text" placeholder="Ejem n1,n2,..nk" [(ngModel)]="n1">
+                <button  (click)="Meresultado()">Resolver</button>
+
+                <p class="txtTituloFormula">Formula del teorema 4</p>
+                <div [mathjax]="Formula" class="txtFormula"></div>
+            </div>
+
+            <div class="verticalLine"></div>
+
+            <div class="ctnrResultadoTeoF">
+                <div class="ctnrTitulosReDefi">
+                    <h3  (click)="meCambiarTemas()"   [ngClass]="CambiarTemas==true ? 'txt-tiResult' : 'txt-tiResultOf'" >Resultado</h3>
+                    <h3  (click)="meCambiarTemas()"   [ngClass]="CambiarTemas ==false ? 'txt-tiResult' : 'txt-tiResultOf'" >Definicion</h3>
+                </div>
+
+                <ng-template [ngIf]="CambiarTemas">
+                    <div *ngIf=mostrar>
+                        <p [mathjax]="Formula"></p>
+                        <br>
+                        <p [mathjax]="SustituirTxt"></p>
+                        <br>
+                        <p [mathjax]="SustituirTxt1"></p>
+                        <br>
+                        <p class="resultadoOperacion"> Resultado  = {{resultado}}</p>
+                    </div>
+                </ng-template>
 
 
+                <ng-template [ngIf]="!CambiarTemas">
+                    <div>
+                        <p class="txtDefinicionTeorema">  Teorema 4 <br> El numero de permutacion distintas de n objetos, en el que n1 son de una clase, n2 de un segunda clase,..., nk  de una k-esima clase </p>
+                        <br>
+                        <p class="txtDefinicionTeorema">  Ejemplo <br> Durante un entrenamiento de fútbol americano colegial, el coordinador defensivo necesiya tener 10 parados en una fila. Entre estos 10 jugadores hay 1 de primero año, 2 de segundo año, 4 de tercer año y 3 de cuarto año, respectivamente. ¿ de cuantas formas diferentes se pueden arreglar en una fila si lo unico que los distingue es el grado en el cual estan? </p>
+                        <br>
+                        <p class="txtDefinicionTeorema">  n= 10! (10 jugadores) </p>
+                        <p class="txtDefinicionTeorema">  n1= 1! (1 primer año) </p>
+                        <p class="txtDefinicionTeorema">  n2= 2! (2 segundo  año) </p>
+                        <p class="txtDefinicionTeorema">  n3= 4! (4 tercer  año) </p>
+                        <p class="txtDefinicionTeorema">  n4= 3! (3 cuarto  año) </p>
+                        <br>
+                        <p [mathjax]="contenEjempl1"></p>
+                        <br>
+                    </div>
+                </ng-template>
+
+
+            </div>
         </div>
     </div>
 </div>

@@ -1,7 +1,7 @@
 <div class="ctnrMainTeoremaFather">
     <div class="ctnrMaonTeorema" >
         <div class="ctnrTitleTeorema">
-            <h3>Teorema 6</h3>
+            <h3>Teorema 7</h3>
         </div>
 
         <div class="cntrTeoremaGrid">
@@ -9,11 +9,11 @@
             <div class="ctnrIngresoDatosTeoF">
                 <h3>Ingrese los valores</h3>
                 <input type="number" placeholder="n" [(ngModel)]="n">
-                <input type="text" placeholder="r" [(ngModel)]="r">
+                <input type="text" placeholder="Ejem n1,n2,..nk" [(ngModel)]="n1">
                 <button  (click)="Meresultado()">Resolver</button>
 
-                <p class="txtTituloFormula">Formula del teorema 6</p>
-                <div [mathjax]="Formula" class="txtFormula"></div>
+                <p class="txtTituloFormula">Formula del teorema 7</p>
+                <p class="txtFormula"> P(A U B) = P(A)+P(B)-P(A∩B )  </p>
             </div>
 
             <div class="verticalLine"></div>
@@ -32,30 +32,36 @@
                         <br>
                         <p [mathjax]="SustituirTxt1"></p>
                         <br>
-                        <p [mathjax]="SustituirTxt2"></p>
-                        <br>
                         <p class="resultadoOperacion"> Resultado  = {{resultado}}</p>
                     </div>
                 </ng-template>
 
+
                 <ng-template [ngIf]="!CambiarTemas">
                     <div>
-                        <p class="txtDefinicionTeorema">  Teorema 6 <br> EL numero de combinaciones de n objetos distintos tomados de r a la vez </p>
-                        <p [mathjax]="Formula"></p>
+                        <p class="txtDefinicionTeorema">  Teorema 7 <br> Si A y B son dos eventos, entonces </p>
+                        <p class="txtDefinicionTeorema"> P(A U B) = P(A)+P(B)-P(A∩B )  </p>
                         <br>
-                        <p class="txtDefinicionTeorema">  Ejemplo <br>  Un niño le pide a su madre que le lleve cinco cartuchos de Game-Boy de su coleccion de 10 juegos recreativos y 5 de deportes.  ¿De cuantas maneras podria su madre llevarle 3 juegos recreativos y 2 de deportes </p>
+                        <p class="txtDefinicionTeorema">  Ejemplo <br>  Al final del semestre John se va a graduar en la facultad de ingeniería
+                            industrial de una universidad. Después de tener entrevistas en dos
+                            empresas en donde quiere trabajar, determina que la probabilidad que
+                            tiene de lograr una oferta de empleo en la empresa A es 0.8, y que la
+                            probabilidad de obtenerla en la empresa B es 0.6. Si, por otro lado,
+                            considera que la probabilidad de recibir ofertas de ambas empresas es
+                            0.5, ¿qué probabilidad tiene de obtener al menos una oferta de esas
+                            dos empresas?</p>
                         <br>
-                        <p class="txtDefinicionTeorema">  El numero de formas de seleccionar 3 cartuchos de 10 es:  </p>
-                        <p [mathjax]="contenEjempl1"></p>
+                        <p class="txtDefinicionTeorema"> Solucion <br> si usamos la regla aditiva tenemos </p>
+                        <p class="txtDefinicionTeorema">  P(A ∪ B) = P(A) + P(B) – P(A ∩ B) </p>
+                        <p class="txtDefinicionTeorema">  = 0.8 + 0.6 – 0.5 = 0.9. </p>
                         <br>
-                        <p class="txtDefinicionTeorema">  El numero de formas de seleccionar 2 cartuchos de 5 es:  </p>
-                        <p [mathjax]="contenEjempl2"></p>
                     </div>
                 </ng-template>
+
 
             </div>
         </div>
 
-
+        
     </div>
 </div>
